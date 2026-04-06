@@ -19,7 +19,8 @@
 			
 		<nav class="main_nav">   	
 			<a href="Default.aspx">דף בית</a>
-			<a href="FirstPage.aspx">דף 1</a>				
+			<a href="FirstPage.aspx">דף 1</a>
+            <a href="TheHouses.aspx">הבתים בהגוורטס</a>
 		</nav>
 	</header>
 		
