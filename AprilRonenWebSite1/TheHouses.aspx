@@ -17,17 +17,17 @@
 
         <h2>Slytherin</h2>
         <a href="Slytherin.aspx">
-            <img src="" width="100px" alt="Slytherin House"/>
+            <img src="images/SlytherinLogo.jpg" width="100px" alt="Slytherin House"/>
         </a>
 
         <h2>Ravenclaw</h2>
         <a href="Ravenclaw.aspx">
-            <img src="" width="100px" alt="Ravenclaw House"/>
+            <img src="images/RavenclawLogo.png" width="100px" alt="Ravenclaw House"/>
         </a>
 
         <h2>Hufflepuff</h2>
         <a href="Hufflepuff.aspx">
-            <img src="" width="100px" alt="Hufflepuff House"/>
+            <img src="images/HufflepuffLogo.jpg" width="100px" alt="Hufflepuff House"/>
         </a>
 
     </div>

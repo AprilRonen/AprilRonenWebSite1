@@ -18,9 +18,9 @@
 		</section>
 			
 		<nav class="main_nav">   	
-			<a href="Default.aspx">דף בית</a>
-			<a href="FirstPage.aspx">דף 1</a>
-            <a href="TheHouses.aspx">הבתים בהגוורטס</a>
+			<a href="Default.aspx">Home Page</a>
+			<a href="FirstPage.aspx">Page 1</a>
+            <a href="TheHouses.aspx">Hogwarts Houses</a>
 		</nav>
 	</header>
 		
