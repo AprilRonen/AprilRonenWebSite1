@@ -13,7 +13,12 @@
 <body>
     <form id="form1" runat="server">
     <header>
-		<section class="header_top">				
+		<section class="header_top">
+			
+			<section class="header_date">
+			<asp:Label ID="DateLabel" runat="server"></asp:Label>
+			<asp:Image ID="DayImage" runat="server"/>
+		</section>
 				
 		</section>
 			
