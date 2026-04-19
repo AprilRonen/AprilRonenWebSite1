@@ -5,7 +5,7 @@
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" Runat="Server">
-    תוכן דף ראשוןןןןן
+    תוכן דף ראשוןןןןןן
 </asp:Content>
 
 
