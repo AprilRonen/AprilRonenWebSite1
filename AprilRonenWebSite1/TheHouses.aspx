@@ -5,32 +5,46 @@
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" Runat="Server">
-    <div>
+    
+    <div class="houses-page-container">
         <h1>The Hogwarts Houses</h1>
-        <p>Hogwarts School of Witchcraft and Wizardry is divided into four houses: Gryffindor, Hufflepuff, Ravenclaw, and Slytherin, each with unique traits and values.<br />Let's learn about each one of them
+        <p class="intro-text">
+            Hogwarts School of Witchcraft and Wizardry is divided into four houses: 
+            Gryffindor, Hufflepuff, Ravenclaw, and Slytherin, each with unique traits and values.<br />
+            Let's learn about each one of them:
         </p>
 
-        <h2>Gryffindor:</h2>
-        <a href="Gryffindor.aspx">
-            <img src="images/GryffindorLogo.jpg" width="100px" alt="Gryffindor House"/>
-        </a>
+        <div class="houses-grid">
+            <div class="house-item">
+                <h2>Gryffindor</h2>
+                <a href="Gryffindor.aspx">
+                    <img src="images/GryffindorLogo.jpg" class="house-logo" alt="Gryffindor House"/>
+                </a>
+            </div>
 
-        <h2>Slytherin</h2>
-        <a href="Slytherin.aspx">
-            <img src="images/SlytherinLogo.jpg" width="100px" alt="Slytherin House"/>
-        </a>
+            <div class="house-item">
+                <h2>Slytherin</h2>
+                <a href="Slytherin.aspx">
+                    <img src="images/SlytherinLogo.jpg" class="house-logo" alt="Slytherin House"/>
+                </a>
+            </div>
 
-        <h2>Ravenclaw</h2>
-        <a href="Ravenclaw.aspx">
-            <img src="images/RavenclawLogo.png" width="100px" alt="Ravenclaw House"/>
-        </a>
+            <div class="house-item">
+                <h2>Ravenclaw</h2>
+                <a href="Ravenclaw.aspx">
+                    <img src="images/RavenclawLogo.png" class="house-logo" alt="Ravenclaw House"/>
+                </a>
+            </div>
 
-        <h2>Hufflepuff</h2>
-        <a href="Hufflepuff.aspx">
-            <img src="images/HufflepuffLogo.jpg" width="100px" alt="Hufflepuff House"/>
-        </a>
-
+            <div class="house-item">
+                <h2>Hufflepuff</h2>
+                <a href="Hufflepuff.aspx">
+                    <img src="images/HufflepuffLogo.jpg" class="house-logo" alt="Hufflepuff House"/>
+                </a>
+            </div>
+        </div>
     </div>
+
 </asp:Content>
 
 

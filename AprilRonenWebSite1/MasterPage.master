@@ -22,7 +22,8 @@
 				
 		</section>
 			
-		<nav class="main_nav">   	
+		<nav class="main_nav">  
+			<h1>Harry Potter</h1>
 			<a href="Default.aspx">Home Page</a>
 			<a href="FirstPage.aspx">Page 1</a>
             <a href="TheHouses.aspx">Hogwarts Houses</a>

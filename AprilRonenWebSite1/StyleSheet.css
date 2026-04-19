@@ -39,22 +39,31 @@ header {
 
 
 .main_nav {
-    background-color: lightgray;
+    background-color: #3e2723;
     min-height: 30px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding: 10px;
 }
+
+    .main_nav h1 
+    {
+        display: inline-block; 
+        color: #fdf5e6; 
+        margin-right: 20px; 
+        font-size: 28px; 
+        font-family: 'Georgia', serif; 
+        vertical-align: middle; 
+    }
 
     .main_nav a {
         text-decoration: none;
-        font-size: 24px;
-        color: darkblue;
-        margin: 10px;
+        font-size: 20px;
+        color: #fdf5e6;
+        margin: 0 15px;
     }
 
 
 .center {
-    background-color: lime;
+    background-color: #eaddca;
     margin-bottom: 5px;
     display: flex;
 }
@@ -64,20 +73,131 @@ main, aside {
 }
 
 main {
-    background-color: darkblue;
+    background-color: #fdf5e6;
     flex: 4;
-    color: white;
-    padding: 5px 10px;
+    color: #3e2723;
+    padding: 20px;
+    line-height: 1.6;
 }
+
+    main a 
+    {
+        color: #8b4513;
+        font-weight: bold;
+        text-decoration: underline;
+    }
 
 
 aside {
-    background-color: gray;
+    background-color: #d2b48c;
     flex: 1;
-    padding: 5px;
+    padding: 10px;
+    text-align: center;
+    color: #3e2723;
+}
+
+footer 
+{
+    background-color: #3e2723; 
+    color: #fdf5e6;
+    text-align: center;
+    padding: 15px;
+    border-top: 2px solid #d2b48c;
+}
+
+
+
+
+
+
+/* --- עיצוב תוכן דף הבית --- */
+
+.welcome-container {
+    text-align: center; /* ממרכז את הכותרת והטקסט */
+}
+
+.main-images {
+    display: flex; /* שם את התמונות בשורה */
+    justify-content: center; /* ממרכז אותן בשורה */
+    align-items: center; /* מיישר אותן אחת מול השנייה בגובה */
+    gap: 20px; /* יוצר רווח של 20 פיקסלים ביניהן */
+    margin: 20px 0; /* מוסיף רווח מלמעלה ומלמטה של גוש התמונות */
+}
+
+/* הגדרת גודל לתמונות לפי ה-class שנתנו להן */
+.hp-image-small {
+    width: 150px;
+    height: auto;
+}
+
+.hp-image-large {
+    width: 250px;
+    height: auto;
+}
+
+/* עיצוב משפט הסיום */
+.call-to-action {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+
+
+
+
+/* עיצוב דף הבתים */
+.houses-page-container {
     text-align: center;
 }
 
-footer {
-    background-color: orange;
+.houses-grid {
+    display: flex;
+    flex-wrap: wrap; /* מאפשר להם לרדת שורה אם אין מקום */
+    justify-content: center;
+    gap: 40px; /* רווח בין הבתים */
+    margin-top: 30px;
+}
+
+.house-item {
+    width: 200px; /* רוחב לכל יחידת בית */
+    transition: transform 0.3s; /* אנימציה חלקה */
+}
+
+    .house-item:hover {
+        transform: scale(1.1); /* הגדלה קטנה כשעומדים על הבית */
+    }
+
+.house-logo {
+    width: 150px; /* הגדלתי קצת מ-100 כדי שיהיה ברור */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.house-item h2 {
+    color: #3e2723;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+/* הגדרת גודל לתמונות הבתים עם כוח חזק */
+.house-logo {
+    width: 120px !important; /* זה יכריח את התמונה להיות בגודל הזה */
+    height: auto !important; /* שומר על הפרופורציות */
+    margin: 10px;
+    border: 1px solid #3e2723;
+    border-radius: 8px;
+}
+
+/* כדי שהם יעמדו בשורה ולא אחד מתחת לשני */
+.houses-grid {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.house-item {
+    text-align: center;
+    width: 150px; /* רוחב ה"תא" של כל בית */
 }
