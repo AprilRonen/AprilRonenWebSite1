@@ -201,3 +201,159 @@ footer
     text-align: center;
     width: 150px; /* רוחב ה"תא" של כל בית */
 }
+
+
+
+
+/* עיצוב כללי לעמודי הבתים */
+.house-details {
+    padding: 20px;
+    border-radius: 15px;
+}
+
+/* עיצוב ספציפי לגריפינדור - בורדו וזהב */
+.gryffindor-theme h1 {
+    color: #740001; /* בורדו גריפינדור */
+    border-bottom: 3px solid #ae0001;
+    display: inline-block;
+}
+
+.house-info-box {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 20px 0;
+    background-color: rgba(174, 0, 1, 0.1); /* רקע בורדו שקוף ועדין */
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.house-page-logo {
+    width: 200px !important; /* גודל ברור של הסמל */
+    height: auto !important;
+    border: 3px solid #eeba30; /* מסגרת זהב */
+    border-radius: 10px;
+}
+
+.stats p {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 30px;
+    font-weight: bold;
+    color: #740001;
+}
+
+
+
+/* עיצוב ספציפי לסלית'רין - ירוק וכסף */
+.slytherin-theme h1 {
+    color: #1a472a; /* ירוק סלית'רין כהה */
+    border-bottom: 3px solid #2a623d;
+    display: inline-block;
+}
+
+.slytherin-theme .house-info-box {
+    background-color: rgba(26, 71, 42, 0.1); /* רקע ירוק שקוף עדין */
+    border-left: 5px solid #5d5d5d; /* פס כסוף בצד */
+}
+
+.slytherin-theme .house-page-logo {
+    border: 3px solid #aaaaaa; /* מסגרת כסופה */
+}
+
+.slytherin-theme .back-link {
+    color: #1a472a;
+}
+
+/* אפקט קטן לטקסט התיאור שיהיה קצת יותר דרמטי */
+.slytherin-theme .house-description {
+    border-right: 3px solid #2a623d;
+    padding-right: 15px;
+    font-style: italic;
+}
+
+
+
+/* --- עיצוב רייבנקלו (כחול) --- */
+.ravenclaw-theme h1 {
+    color: #0e1a40; /* כחול כהה */
+    border-bottom: 3px solid #222f5b;
+    display: inline-block;
+}
+
+.ravenclaw-theme .house-info-box {
+    background-color: rgba(14, 26, 64, 0.1);
+    border-left: 5px solid #946b2d; /* פס ברונזה */
+}
+
+.ravenclaw-theme .house-page-logo {
+    border: 3px solid #222f5b;
+}
+
+.ravenclaw-theme .back-link {
+    color: #0e1a40;
+}
+
+
+
+
+/* --- עיצוב האפלפאף (צהוב) --- */
+.hufflepuff-theme h1 {
+    color: #000000; /* שחור */
+    border-bottom: 3px solid #ecb939; /* פס צהוב */
+    display: inline-block;
+}
+
+.hufflepuff-theme .house-info-box {
+    background-color: rgba(236, 185, 57, 0.2); /* רקע צהבהב */
+    border-left: 5px solid #372e29; /* פס שחור/חום כהה */
+}
+
+.hufflepuff-theme .house-page-logo {
+    border: 3px solid #ecb939;
+}
+
+.hufflepuff-theme .back-link {
+    color: #372e29;
+}
+
+
+
+/* עיצוב דף דמויות */
+.characters-container {
+    padding: 10px;
+}
+
+.character-card {
+    display: flex;
+    background-color: rgba(210, 180, 140, 0.3); /* רקע חום בהיר שקוף */
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #d2b48c;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+    .character-card:hover {
+        transform: translateX(10px); /* אפקט תזוזה קטן הצידה כשעוברים עם העכבר */
+        background-color: rgba(210, 180, 140, 0.5);
+    }
+
+.char-img {
+    width: 100px !important;
+    height: 100px !important;
+    border-radius: 50%; /* הופך את תמונת הדמות לעיגול */
+    object-fit: cover;
+    margin-right: 20px;
+    border: 2px solid #3e2723;
+}
+
+.char-info h3 {
+    margin: 0 0 5px 0;
+    color: #3e2723;
+}
