@@ -42,7 +42,16 @@ header {
     background-color: #3e2723;
     min-height: 30px;
     padding: 10px;
+    display: flex;
+    align-items: center;
 }
+
+    .main_nav .login_logout {
+        margin-right: auto;
+        border: 1px solid black;
+        padding: 5px;
+    }
+
 
     .main_nav h1 
     {
