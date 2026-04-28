@@ -71,17 +71,6 @@ public partial class Registration : System.Web.UI.Page
         }
 
         return true;
-
-        // === משימה לתלמיד: וידוא שם משתמש ===
-        // 1. בדוק אם אורך שם המשתמש קטן מ-3 או גדול מ-8 תווים
-        // לדוגמה של בדיקת אורך, הסתכל בפעולה:
-        // First_Name_Validation
-        // 2. אם האורך לא תקין, הוסף הודעת שגיאה לתוך:
-        // RegistrationResult.InnerText
-        // 3. ולאחר מכן עצור את הפעולה על ידי:
-        // return false;
-
-        return true;
     }
 
     private bool Password_Validation()
@@ -126,35 +115,83 @@ public partial class Registration : System.Web.UI.Page
 
     private bool ID_Validation()
     {
-        // === משימה לתלמיד: וידוא תעודת זהות ===
-        // 1. ודא שאורך תעודת הזהות הוא בדיוק 9 תווים
-        // 2. ודא שכל התווים במחרוזת הם ספרות בלבד
-        // כדי לעבור על כל התווים, תוכל להיעזר בלולאה שמופיעה בפעולה:
-        // Password_Validation
-        // 3. אם יש שגיאה, אל תשכח להוסיף הודעה אל:
-        // RegistrationResult.InnerText
-        // ולהחזיר:
-        // return false;
+        string id = idNum.Value;
 
+        if (id.Length != 9)
+        {
+            RegistrationResult.InnerText += "הת.ז חייבת להכיל 9 תווים.";
+            return false;
+        }
+
+        bool letterExist = false;
+        bool numberExist = false;
+        for (int i = 0; i < id.Length; i++)
+        {
+            // בדיקת קיום אותיות
+            if (id[i] >= 'a' && id[i] <= 'z' || id[i] >= 'A' && id[i] <= 'Z')
+                letterExist = true;
+            // בדיקת קיום מספרים
+            else if (id[i] >= '0' && id[i] <= '9')
+                numberExist = true;
+        }
+        if (letterExist || !numberExist)
+        {
+            RegistrationResult.InnerText += "הת.ז חייבת להכיל רק מספרים. ";
+            return false;
+        }
         return true;
     }
 
     private bool Phone_Validation()
     {
-        // === משימה לתלמיד: וידוא מספר טלפון ===
-        // 1. ודא שאורך מספר הטלפון הוא בדיוק 10 תווים
-        // 2. ודא שהתו הראשון במספר הוא הספרה אפס
-        // 3. ודא שכל התווים במחרוזת הם ספרות בלבד
-        // 4. במקרה שאחד מהתנאים לא מתקיים, עדכן את:
-        // RegistrationResult.InnerText
-        // וסיים את הפעולה עם:
-        // return false;
+        string phoneNUM = phone.Value;
 
+        if (phoneNUM.Length != 10)
+        {
+            RegistrationResult.InnerText += "מספר הטלפון חייב להכיל 10 תווים.";
+            return false;
+        }
+        if (phoneNUM[0] != '0')
+        {
+            RegistrationResult.InnerText += "מספר הטלפון חייב להתחיל בספרה 0.";
+            return false;
+        }
+
+        bool letterExist = false;
+        bool numberExist = false;
+        for (int i = 0; i < phoneNUM.Length; i++)
+        {
+            // בדיקת קיום אותיות
+            if (phoneNUM[i] >= 'a' && phoneNUM[i] <= 'z' || phoneNUM[i] >= 'A' && phoneNUM[i] <= 'Z')
+                letterExist = true;
+            // בדיקת קיום מספרים
+            else if (phoneNUM[i] >= '0' && phoneNUM[i] <= '9')
+                numberExist = true;
+        }
+        if (letterExist || !numberExist)
+        {
+            RegistrationResult.InnerText += "מספר הטלפון חייב להכיל רק מספרים. ";
+            return false;
+        }
         return true;
     }
 
     private bool Email_Validation()
     {
+        string Goodmail = mail.Value;
+
+        bool @Exist = false;
+        bool pointExist = false;
+        for (int i = 0; i < Goodmail.Length; i++)
+        {
+            // בדיקת קיום אותיות
+            if (Goodmail[i] >= '@')
+                @Exist = true;
+            // בדיקת קיום מספרים
+            else if (Goodmail[i] >= '0' && Goodmail[i] <= '9')
+                numberExist = true;
+        }
+
         // === משימה לתלמיד: וידוא כתובת אימייל בסיסית ===
         // ודא שהתנאים הבאים מתקיימים:
         // 1. המחרוזת מכילה את התו שטרודל
