@@ -26,7 +26,7 @@
 			<h1>Harry Potter</h1>
 			<a href="Default.aspx">Home Page</a>
 			<a href="FirstPage.aspx">Key Characters</a>
-            <a href="TheHouses.aspx">Hogwarts Houses</a>
+            <a id="house" runat="server" href="TheHouses.aspx">Hogwarts Houses</a>
 
 			<a class="login_logout" ID="LoginLogout" runat="server"></a>
 		</nav>

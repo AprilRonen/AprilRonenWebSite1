@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -180,27 +181,46 @@ public partial class Registration : System.Web.UI.Page
     {
         string Goodmail = mail.Value;
 
-        bool @Exist = false;
+        bool Aexist = false;
         bool pointExist = false;
+        bool ABp = false;
+        int Anum = 0;
+        int Pnum = 0;
+
         for (int i = 0; i < Goodmail.Length; i++)
         {
-            // בדיקת קיום אותיות
-            if (Goodmail[i] >= '@')
-                @Exist = true;
-            // בדיקת קיום מספרים
-            else if (Goodmail[i] >= '0' && Goodmail[i] <= '9')
-                numberExist = true;
+            if (Goodmail[i] == '@')
+            {
+                Aexist = true;
+                Anum = i;
+            }
+            else if (Goodmail[i] == '.')
+            {
+                pointExist = true;
+                Pnum = i;
+            }
+
+            if (Anum < Pnum)
+            {
+                ABp = true;
+            }
         }
 
-        // === משימה לתלמיד: וידוא כתובת אימייל בסיסית ===
-        // ודא שהתנאים הבאים מתקיימים:
-        // 1. המחרוזת מכילה את התו שטרודל
-        // 2. המחרוזת מכילה את התו נקודה
-        // 3. הנקודה מופיעה אחרי השטרודל
-        // רמז: כדי למצוא את המיקום של התווים, חפש ברשת איך להשתמש בפעולה:
-        // IndexOf
-        // במקרה שאחד התנאים לא מתקיים, הוסף הודעת שגיאה מתאימה והחזר:
-        // return false;
+        if (!pointExist)
+        {
+            RegistrationResult.InnerText += "חסרה נקודה באימייל. ";
+            return false;
+        }
+        if (!Aexist)
+        {
+            RegistrationResult.InnerText += "חסר שטרודל באימייל. ";
+            return false;
+        }
+        if (!ABp)
+        {
+            RegistrationResult.InnerText += "הנקודה באימייל צריכה להגיע לאחר השטרודל. ";
+            return false;
+        }
 
         return true;
     }
@@ -218,6 +238,31 @@ public partial class Registration : System.Web.UI.Page
 
     private bool Insert_Into_Database()
     {
+        string dbPath = this.MapPath("App_Data/Database.mdf");
+        DAL dal = new DAL(dbPath);
+
+        string sqlQuery = "SELECT * FROM Users WHERE user_name = '" + userName.Value + "'";
+        DataTable dt = dal.GetDataTable(sqlQuery);
+
+        if (dt.Rows.Count > 0)
+        {
+            RegistrationResult.InnerText = "שם משתמש קיים במערכת. אנא בחר.י שם אחר.";
+            return false;
+        }
+
+        sqlQuery = "INSERT INTO Users VALUES (" +
+        "'" + firstName.Value + "', " +
+        "'" + lastName.Value + "', " +
+        "'" + userName.Value + "', " +
+        "'" + pswd.Value + "', " +
+        "'" + idNum.Value + "'," +
+        "'" + phone.Value + "'," +
+        "'" + mail.Value + "'," +
+        "'" + Request.Form["gender"] + "'," +
+        "'" + DateTime.Now.ToString("yyyy-MM-dd") + "', 0);";
+
+        dal.UpdateDB(sqlQuery);
+
         return true;
     }
 
