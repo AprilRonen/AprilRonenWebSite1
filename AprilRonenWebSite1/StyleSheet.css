@@ -366,3 +366,13 @@ footer
     margin: 0 0 5px 0;
     color: #3e2723;
 }
+
+
+/*טבלת אדמין*/
+.adminTable tr:nth-child(even) {
+    background-color: lightgray;
+}
+
+.adminTable, .adminTable th, .adminTable td {
+    border: 1px solid black;
+}
