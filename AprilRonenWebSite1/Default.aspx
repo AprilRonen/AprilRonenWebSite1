@@ -8,29 +8,33 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" Runat="Server">
     
     <div class="welcome-container">
-        <h2>Welcome to the Wizarding World</h2>
-        
-        <p class="intro-text">
-            Harry Potter is a series of seven fantasy novels written by British author 
-            <a href="https://en.wikipedia.org/wiki/J._K._Rowling" target="_blank">J. K. Rowling</a>. 
-            The novels chronicle the lives of a young wizard, Harry Potter, and his friends, 
-            Ron Weasley and Hermione Granger, all of whom are students at Hogwarts School of Witchcraft and Wizardry.
-        </p>
-
-        <div class="main-images">
-            <img src="images/hogwartslogo.png" alt="Hogwarts Logo" class="hp-image-small" />
-            <img src="images/mainpage harrypotter.jpg" alt="Harry Potter" class="hp-image-large" />
+        <div class="welcome-header">
+            <h2>Hogwarts School of Witchcraft and Wizardry</h2>
+            <div class="wand-divider"></div>
         </div>
+        
+        <p class="intro-text font-elegant">
+            The story of the Wizarding World chronicles the lives of a young wizard, Harry Potter, 
+            and his friends, Ron Weasley and Hermione Granger, as they navigate the magical mysteries 
+            of Hogwarts School. Written by British author 
+            <a href="https://en.wikipedia.org/wiki/J._K._Rowling" target="_blank" class="magic-link">J. K. Rowling</a>, 
+            this epic tale has captured the hearts of millions across the globe.
+        </p>
 
-        <p class="intro-text">
-            The main story arc concerns Harry's conflict with Lord Voldemort, a dark wizard who intends to become immortal, 
-            overthrow the wizard governing body known as the Ministry of Magic, and subjugate all wizards and non-magical people, 
-            known in-universe as Muggles.
+        <p class="intro-text font-elegant">
+            At its core, the journey revolves around Harry's ultimate conflict with Lord Voldemort, 
+            a dark wizard who intends to become immortal, overthrow the Ministry of Magic, 
+            and subjugate all wizards and non-magical people alike.
         </p>
         
-        <p class="call-to-action">
-            Ready to start your journey? Use the menu above to explore the <strong>Hogwarts Houses</strong>!
-        </p>
+        <div class="auth-notice-box">
+            <h3>Unlock the Magic</h3>
+            <p>Some areas of our magical institution—including the historic <strong>Hogwarts Houses</strong>—are restricted to registered witches and wizards only.</p>
+            <div class="auth-buttons">
+                <a href="Login.aspx" class="magic-btn btn-gold">Log In</a>
+                <a href="Registration.aspx" class="magic-btn">Sign In</a>
+            </div>
+        </div>
     </div>
 
 </asp:Content>

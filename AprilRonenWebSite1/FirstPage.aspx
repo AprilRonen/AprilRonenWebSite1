@@ -11,7 +11,7 @@
         <p class="intro-text">Meet the students who changed the wizarding world forever.</p>
 
         <div class="character-card">
-            <img src="images/harry_potter.jpg" alt="Harry Potter" class="char-img" />
+            <img src="images/harry_potter.jfif" alt="Harry Potter" class="char-img" />
             <div class="char-info">
                 <h3>Harry Potter</h3>
                 <p>"The Boy Who Lived" - The only known survivor of the Killing Curse and the true hero of the Second Wizarding War.</p>
