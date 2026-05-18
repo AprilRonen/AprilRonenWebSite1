@@ -9,7 +9,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" Runat="Server">
    <div class="classes-container">
         <h1>Hogwarts School Curriculum</h1>
-        <p class="intro-text">Welcome to your academic year at Hogwarts. Here is a look at the core subjects every young wizard and witch must master:</p>
+        <p class="intro-text">Welcome to your academic year at <a href="https://en.wikipedia.org/wiki/Hogwarts" target="_blank" class="magic-link">Hogwarts</a>. Here is a look at the core subjects every young wizard and witch must master:</p>
 
         <div class="classes-grid">
             

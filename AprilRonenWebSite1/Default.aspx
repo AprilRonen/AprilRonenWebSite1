@@ -32,7 +32,7 @@
             <p>Some areas of our magical institution—including the historic <strong>Hogwarts Houses</strong>—are restricted to registered witches and wizards only.</p>
             <div class="auth-buttons">
                 <a href="Login.aspx" class="magic-btn btn-gold">Log In</a>
-                <a href="Registration.aspx" class="magic-btn">Sign In</a>
+                <a href="Registration.aspx" class="magic-btn">Sign Up</a>
             </div>
         </div>
     </div>
