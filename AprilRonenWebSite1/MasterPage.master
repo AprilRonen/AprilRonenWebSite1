@@ -12,28 +12,35 @@
 </head>
 <body>
     
-    <header>
-		<section class="header_top">
+ <header>
+	<section class="header_top">
 			
-			<section class="header_date">
+		<section class="header_date">
 			<asp:Label ID="DateLabel" runat="server"></asp:Label>
 			<asp:Image ID="DayImage" runat="server"/>
 		</section>
 				
-		</section>
+	</section>
 			
-		<nav class="main_nav">  
-			<h1>Harry Potter</h1>
-			<a href="Default.aspx">Home Page</a>
-			<a href="FirstPage.aspx">Key Characters</a>
-			<a href="Spells.aspx">Spellbook</a> 
-			<a href="Creatures.aspx">Creatures</a>
-			<a href="Classes.aspx">Hogwarts Classes</a>
-            <a id="house" runat="server" href="TheHouses.aspx">Hogwarts Houses</a>
+	<nav class="main_nav">  
+		<div class="header-branding-container">
+			<img src="images/logo.png" alt="Hogwarts Logo" class="site-logo" />
+			<div class="brand-text">
+				<h1 class="main-title">Hogwarts Chronicles</h1>
+				<p class="sub-title">The Official Student Portal</p>
+			</div>
+		</div>
 
-			<a class="login_logout" ID="LoginLogout" runat="server"></a>
-		</nav>
-	</header>
+		<a href="Default.aspx">Home Page</a>
+		<a href="FirstPage.aspx">Key Characters</a>
+		<a href="Spells.aspx">Spellbook</a> 
+		<a href="Creatures.aspx">Creatures</a>
+		<a href="Classes.aspx">Hogwarts Classes</a>
+		<a id="house" runat="server" href="TheHouses.aspx">Hogwarts Houses</a>
+
+		<a class="login_logout" ID="LoginLogout" runat="server"></a>
+	</nav>
+</header>
 		
 	<section class="center">
 		<aside>

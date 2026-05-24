@@ -24,15 +24,18 @@ public partial class Registration : System.Web.UI.Page
 
     private bool Form_Validation()
     {
-        return
-            First_Name_Validation() &&
-            Last_Name_Validation() &&
-            User_Name_Validation() &&
-            Password_Validation() &&
-            ID_Validation() &&
-            Phone_Validation() &&
-            Email_Validation() &&
-            Approval_Validation();
+        bool isValid = true;
+
+        if (!First_Name_Validation()) isValid = false;
+        if (!Last_Name_Validation()) isValid = false;
+        if (!User_Name_Validation()) isValid = false;
+        if (!Password_Validation()) isValid = false;
+        if (!ID_Validation()) isValid = false;
+        if (!Phone_Validation()) isValid = false;
+        if (!Email_Validation()) isValid = false;
+        if (!Approval_Validation()) isValid = false;
+
+        return isValid;
     }
 
     private bool First_Name_Validation()
@@ -120,25 +123,17 @@ public partial class Registration : System.Web.UI.Page
 
         if (id.Length != 9)
         {
-            RegistrationResult.InnerText += "הת.ז חייבת להכיל 9 תווים.";
+            RegistrationResult.InnerText += "הת.ז חייבת להכיל 9 תווים. ";
             return false;
         }
 
-        bool letterExist = false;
-        bool numberExist = false;
         for (int i = 0; i < id.Length; i++)
         {
-            // בדיקת קיום אותיות
-            if (id[i] >= 'a' && id[i] <= 'z' || id[i] >= 'A' && id[i] <= 'Z')
-                letterExist = true;
-            // בדיקת קיום מספרים
-            else if (id[i] >= '0' && id[i] <= '9')
-                numberExist = true;
-        }
-        if (letterExist || !numberExist)
-        {
-            RegistrationResult.InnerText += "הת.ז חייבת להכיל רק מספרים. ";
-            return false;
+            if (id[i] < '0' || id[i] > '9')
+            {
+                RegistrationResult.InnerText += "הת.ז חייבת להכיל רק מספרים. ";
+                return false;
+            }
         }
         return true;
     }
@@ -149,30 +144,22 @@ public partial class Registration : System.Web.UI.Page
 
         if (phoneNUM.Length != 10)
         {
-            RegistrationResult.InnerText += "מספר הטלפון חייב להכיל 10 תווים.";
+            RegistrationResult.InnerText += "מספר הטלפון חייב להכיל 10 תווים. ";
             return false;
         }
         if (phoneNUM[0] != '0')
         {
-            RegistrationResult.InnerText += "מספר הטלפון חייב להתחיל בספרה 0.";
+            RegistrationResult.InnerText += "מספר הטלפון חייב להתחיל בספרה 0. ";
             return false;
         }
 
-        bool letterExist = false;
-        bool numberExist = false;
         for (int i = 0; i < phoneNUM.Length; i++)
         {
-            // בדיקת קיום אותיות
-            if (phoneNUM[i] >= 'a' && phoneNUM[i] <= 'z' || phoneNUM[i] >= 'A' && phoneNUM[i] <= 'Z')
-                letterExist = true;
-            // בדיקת קיום מספרים
-            else if (phoneNUM[i] >= '0' && phoneNUM[i] <= '9')
-                numberExist = true;
-        }
-        if (letterExist || !numberExist)
-        {
-            RegistrationResult.InnerText += "מספר הטלפון חייב להכיל רק מספרים. ";
-            return false;
+            if (phoneNUM[i] < '0' || phoneNUM[i] > '9')
+            {
+                RegistrationResult.InnerText += "מספר הטלפון חייב להכיל רק מספרים. ";
+                return false;
+            }
         }
         return true;
     }
@@ -181,44 +168,48 @@ public partial class Registration : System.Web.UI.Page
     {
         string Goodmail = mail.Value;
 
-        bool Aexist = false;
-        bool pointExist = false;
-        bool ABp = false;
-        int Anum = 0;
-        int Pnum = 0;
+        int Anum = -1;
+        int Pnum = -1;
+        int Acount = 0;
 
         for (int i = 0; i < Goodmail.Length; i++)
         {
             if (Goodmail[i] == '@')
             {
-                Aexist = true;
+                Acount++;
                 Anum = i;
             }
             else if (Goodmail[i] == '.')
             {
-                pointExist = true;
                 Pnum = i;
             }
-
-            if (Anum < Pnum)
-            {
-                ABp = true;
-            }
         }
 
-        if (!pointExist)
-        {
-            RegistrationResult.InnerText += "חסרה נקודה באימייל. ";
-            return false;
-        }
-        if (!Aexist)
+        if (Anum == -1)
         {
             RegistrationResult.InnerText += "חסר שטרודל באימייל. ";
             return false;
         }
-        if (!ABp)
+        if (Acount > 1)
         {
-            RegistrationResult.InnerText += "הנקודה באימייל צריכה להגיע לאחר השטרודל. ";
+            RegistrationResult.InnerText += "אימייל לא יכול להכיל יותר משטרודל אחד. ";
+            return false;
+        }
+        if (Pnum == -1)
+        {
+            RegistrationResult.InnerText += "חסרה נקודה באימייל. ";
+            return false;
+        }
+
+        if (Anum == 0 || Pnum == 0 || Pnum == Goodmail.Length - 1)
+        {
+            RegistrationResult.InnerText += "מבנה האימייל אינו תקין (תווים מיוחדים בקצוות). ";
+            return false;
+        }
+
+        if (Pnum <= Anum + 1)
+        {
+            RegistrationResult.InnerText += "הנקודה באימייל צריכה להגיע לאחר השטרודל ובמרחק תקין. ";
             return false;
         }
 
